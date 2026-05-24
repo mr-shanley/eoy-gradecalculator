@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Grade Calculator</title>
+	<title>EOY Grade Calculator</title>
 
 	<style>
 	.gradeInput{
@@ -9,140 +9,196 @@
 		text-align:center;
 		font-family:Lexend;
 		font-weight:bold;
+		font-size:11pt;
 		color:black;
 		background:transparent;
+		outline:none;
 	}
 
 	.calculated{
 		color:red;
+	}
+
+	table{
+		border-collapse:collapse;
+	}
+
+	td{
+		border:0.5px solid black;
+	}
+
+	button{
+		font-family:Lexend;
+		font-size:10pt;
+		padding:3px 10px;
+		cursor:pointer;
 	}
 	</style>
 </head>
 
 <body>
 
-<p>&nbsp;</p>
-
-<table border="1" cellpadding="0" cellspacing="0" data-sheets-baot="1" data-sheets-root="1" dir="ltr" style="table-layout: fixed; font-size: 10pt; font-family: Arial; width: 430px; border-collapse: collapse; border-width: medium; border-style: none; border-color: currentcolor; border-image: initial;" xmlns="http://www.w3.org/1999/xhtml">
-	<colgroup>
-		<col width="150" />
-		<col width="65" />
-		<col width="20" />
-		<col width="189" />
-	</colgroup>
-
+<table align="center" border="0" cellpadding="1" cellspacing="0" style="width:600px;">
 	<tbody>
-
-		<tr style="height: 21px;">
-			<td colspan="2" rowspan="1" style="border: 1px solid rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(239, 239, 239); font-family: Lexend; font-size: 11pt; font-weight: bold; text-align: center;">
-				Grade Calculator
-			</td>
-
-			<td colspan="1" rowspan="7" style="border-width: 1px; border-style: solid; border-color: rgb(255, 255, 255) rgb(0, 0, 0) rgb(255, 255, 255) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom;">
-				<div style="max-height: 126px;">&nbsp;</div>
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(0, 0, 0) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: bottom; background-color: rgb(239, 239, 239); font-family: Lexend; font-size: 11pt; font-weight: bold; text-align: center;">
-				Directions
-			</td>
-		</tr>
-
-		<tr style="height: 21px;">
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; font-family: Lexend; text-align: right;">
-				1st Semester Average:
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(204, 204, 204) rgb(204, 204, 204); overflow: hidden; padding: 2px 3px; vertical-align: bottom; text-align: center;">
-				<input type="number" id="S1" class="gradeInput" />
-			</td>
-
-			<td colspan="1" rowspan="6" style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); border-image: initial; overflow: hidden; padding: 2px 3px; vertical-align: middle; font-family: Lexend; font-size: 9pt; overflow-wrap: break-word;">
-				<div style="max-height: 105px;">
-					<span style="font-size: 9pt; font-family: Lexend, Arial;">
-						Fill in any
-					</span>
-
-					<span style="font-size: 9pt; font-family: Lexend, Arial; font-weight: bold; text-decoration: underline;">
-						4
-					</span>
-
-					<span style="font-size: 9pt; font-family: Lexend, Arial;">
-						of the
-					</span>
-
-					<span style="font-size: 9pt; font-family: Lexend, Arial; font-weight: bold; text-decoration: underline;">
-						5
-					</span>
-
-					<span style="font-size: 9pt; font-family: Lexend, Arial;">
-						values on the right. Press [Calculate] to find the missing grade.
-					</span>
-				</div>
-			</td>
-		</tr>
-
-		<tr style="height: 21px;">
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; font-family: Lexend; text-align: right;">
-				Marking Period 3:
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(204, 204, 204) rgb(204, 204, 204); overflow: hidden; padding: 2px 3px; vertical-align: bottom; text-align: center;">
-				<input type="number" id="M3" class="gradeInput" />
-			</td>
-		</tr>
-
-		<tr style="height: 21px;">
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; font-family: Lexend; text-align: right;">
-				Marking Period 4:
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(204, 204, 204) rgb(204, 204, 204); overflow: hidden; padding: 2px 3px; vertical-align: bottom; text-align: center;">
-				<input type="number" id="M4" class="gradeInput" />
-			</td>
-		</tr>
-
-		<tr style="height: 21px;">
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(204, 204, 204) rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; font-family: Lexend; text-align: right;">
-				Spring Final Exam:
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(204, 204, 204) rgb(204, 204, 204); overflow: hidden; padding: 2px 3px; vertical-align: bottom; text-align: center;">
-				<input type="number" id="FE" class="gradeInput" />
-			</td>
-		</tr>
-
-		<tr style="height: 21px;">
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0); overflow: hidden; padding: 2px 3px; vertical-align: bottom; font-family: Lexend; text-align: right;">
-				Overall Year Average:
-			</td>
-
-			<td style="border-width: 1px; border-style: solid; border-color: rgb(204, 204, 204) rgb(0, 0, 0) rgb(0, 0, 0) rgb(204, 204, 204); overflow: hidden; padding: 2px 3px; vertical-align: bottom; text-align: center;">
-				<input type="number" id="YR" class="gradeInput" />
-			</td>
-		</tr>
-
 		<tr>
-			<td colspan="2" style="border: 1px solid black; text-align: center; padding: 8px;">
-				<button onclick="calculateGrade()" style="font-family: Lexend; padding: 4px 14px; cursor: pointer;">
-					Calculate
-				</button>
-			</td>
-		</tr>
 
+			<!-- LEFT TABLE -->
+			<td>
+
+			<table style="table-layout: fixed; font-size: 10pt; font-family: Arial;">
+
+				<colgroup>
+					<col width="150" />
+					<col width="65" />
+				</colgroup>
+
+				<tbody>
+
+					<tr style="height: 21px;">
+						<td colspan="2" style="background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold; text-align:center;">
+							EOY Grade Calculator
+						</td>
+					</tr>
+
+					<tr style="height:21px;">
+						<td style="font-family:Lexend; text-align:right;">
+							1st Semester Average:
+						</td>
+
+						<td style="text-align:center;">
+							<input type="number" id="S1" class="gradeInput">
+						</td>
+					</tr>
+
+					<tr style="height:21px;">
+						<td style="font-family:Lexend; text-align:right;">
+							Marking Period 3:
+						</td>
+
+						<td style="text-align:center;">
+							<input type="number" id="M3" class="gradeInput">
+						</td>
+					</tr>
+
+					<tr style="height:21px;">
+						<td style="font-family:Lexend; text-align:right;">
+							Marking Period 4:
+						</td>
+
+						<td style="text-align:center;">
+							<input type="number" id="M4" class="gradeInput">
+						</td>
+					</tr>
+
+					<tr style="height:21px;">
+						<td style="font-family:Lexend; text-align:right;">
+							Spring Final Exam:
+						</td>
+
+						<td style="text-align:center;">
+							<input type="number" id="FE" class="gradeInput">
+						</td>
+					</tr>
+
+					<tr style="height:21px;">
+						<td style="font-family:Lexend; text-align:right;">
+							Overall Year Average:
+						</td>
+
+						<td style="text-align:center;">
+							<input type="number" id="YR" class="gradeInput">
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2" style="text-align:center; padding:6px;">
+							<button onclick="calculateGrade()">Calculate</button>
+							<button onclick="clearAll()">Clear</button>
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			</td>
+
+			<!-- RIGHT TABLE -->
+			<td style="text-align:center; vertical-align:top;">
+
+			<table style="table-layout: fixed; font-size:10pt; font-family:Arial;">
+
+				<colgroup>
+					<col width="189" />
+				</colgroup>
+
+				<tbody>
+
+					<tr style="height:21px;">
+						<td style="background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold;">
+							Directions
+						</td>
+					</tr>
+
+					<tr>
+						<td style="font-family:Lexend; font-size:9pt; overflow-wrap:break-word; padding:6px;">
+
+							<p>
+								Fill in <strong><u>4</u></strong> values on the right.
+							</p>
+
+							<p>
+								Press <strong>[Calculate]</strong> to find the missing grade.
+							</p>
+
+						</td>
+					</tr>
+
+				</tbody>
+			</table>
+
+			<p id="message" style="font-family:Lexend; color:red;"></p>
+
+			</td>
+
+		</tr>
 	</tbody>
 </table>
 
-<p id="message" style="font-family: Lexend; color: red; margin-top: 10px;"></p>
-
-<p>&nbsp;</p>
 <p>&nbsp;</p>
 
 <script>
-function calculateGrade() {
+const fields = ["S1","M3","M4","FE","YR"];
 
-	const fields = ["S1", "M3", "M4", "FE", "YR"];
+/* ENTER → NEXT FIELD */
+fields.forEach((id, index) => {
 
-	// Reset all fields to black
+	document.getElementById(id).addEventListener("keydown", function(e){
+
+		if(e.key === "Enter"){
+			e.preventDefault();
+
+			if(fields[index + 1]){
+				document.getElementById(fields[index + 1]).focus();
+			}
+		}
+	});
+});
+
+function clearAll(){
+
+	fields.forEach(id => {
+
+		const el = document.getElementById(id);
+
+		el.value = "";
+		el.classList.remove("calculated");
+	});
+
+	document.getElementById("message").innerText = "";
+}
+
+function calculateGrade(){
+
 	fields.forEach(id => {
 		document.getElementById(id).classList.remove("calculated");
 	});
@@ -153,59 +209,57 @@ function calculateGrade() {
 	const FE = parseFloat(document.getElementById("FE").value);
 	const YR = parseFloat(document.getElementById("YR").value);
 
-	const values = { S1, M3, M4, FE, YR };
+	const values = {S1,M3,M4,FE,YR};
 
-	let emptyFields = [];
+	let empty = [];
 
-	for (let key in values) {
-		if (isNaN(values[key])) {
-			emptyFields.push(key);
-		}
+	for(let k in values){
+		if(isNaN(values[k])) empty.push(k);
 	}
 
-	if (emptyFields.length !== 1) {
+	if(empty.length !== 1){
+
 		document.getElementById("message").innerText =
-			"Please fill in exactly 4 of the 5 values.";
+			"Fill exactly 4 values.";
+
 		return;
 	}
 
 	document.getElementById("message").innerText = "";
 
+	let missing = empty[0];
 	let result;
-	let solvedField = emptyFields[0];
 
-	switch (solvedField) {
+	if(missing === "FE"){
 
-		case "FE":
-			result =
-				(YR - (S1 * 0.5) - (M3 * 0.225) - (M4 * 0.225)) / 0.05;
-			break;
+		result =
+			(YR - (S1*0.5) - (M3*0.225) - (M4*0.225)) / 0.05;
 
-		case "YR":
-			result =
-				(S1 * 0.5) + (M3 * 0.225) + (M4 * 0.225) + (FE * 0.05);
-			break;
+	}else if(missing === "YR"){
 
-		case "S1":
-			result =
-				(YR - (M3 * 0.225) - (M4 * 0.225) - (FE * 0.05)) / 0.5;
-			break;
+		result =
+			(S1*0.5) + (M3*0.225) + (M4*0.225) + (FE*0.05);
 
-		case "M3":
-			result =
-				(YR - (S1 * 0.5) - (M4 * 0.225) - (FE * 0.05)) / 0.225;
-			break;
+	}else if(missing === "S1"){
 
-		case "M4":
-			result =
-				(YR - (S1 * 0.5) - (M3 * 0.225) - (FE * 0.05)) / 0.225;
-			break;
+		result =
+			(YR - (M3*0.225) - (M4*0.225) - (FE*0.05)) / 0.5;
+
+	}else if(missing === "M3"){
+
+		result =
+			(YR - (S1*0.5) - (M4*0.225) - (FE*0.05)) / 0.225;
+
+	}else if(missing === "M4"){
+
+		result =
+			(YR - (S1*0.5) - (M3*0.225) - (FE*0.05)) / 0.225;
 	}
 
-	document.getElementById(solvedField).value = result.toFixed(2);
+	const el = document.getElementById(missing);
 
-	// Make solved field red
-	document.getElementById(solvedField).classList.add("calculated");
+	el.value = result.toFixed(2);
+	el.classList.add("calculated");
 }
 </script>
 
