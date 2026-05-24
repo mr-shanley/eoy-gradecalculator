@@ -4,56 +4,54 @@
 
 	<style>
 	.gradeInput{
-			width:55px;
-			border:none;
-			text-align:center;
-			font-family:Lexend;
-			font-weight:bold;
-			font-size:11pt;
-			color:black;
-			background:transparent;
-			outline:none;
+		width:55px;
+		border:none;
+		text-align:center;
+		font-family:Lexend;
+		font-weight:bold;
+		font-size:11pt;
+		color:black;
+		background:transparent;
+		outline:none;
 	}
 
 	.calculated{
-			color:red;
-	}
-
-	/* OUTER LAYOUT TABLE = NO BORDERS */
-	.outerTable,
-	.outerTable td{
-			border:none !important;
-			border-collapse:collapse;
-	}
-
-	/* INNER CALCULATOR TABLES */
-	.calcTable{
-			border-collapse:collapse;
-	}
-
-	.calcTable td{
-			border:0.5px solid black;
+		color:red;
 	}
 
 	button{
-			font-family:Lexend;
-			font-size:10pt;
-			padding:3px 10px;
-			cursor:pointer;
+		font-family:Lexend;
+		font-size:10pt;
+		padding:3px 10px;
+		cursor:pointer;
 	}
 	</style>
 </head>
 
 <body>
 
-<table class="outerTable" align="center" cellpadding="1" cellspacing="0" border="none" style="width:600px;">
+<!-- OUTER TABLE = NO BORDER -->
+<table align="center" cellpadding="1" cellspacing="0" style="width:600px; border:none;">
+
 	<tbody>
 		<tr>
 
 			<!-- LEFT SIDE -->
-			<td style="vertical-align:top;">
+			<td style="vertical-align:top; border:none;">
 
-			<table class="calcTable" border="1" style="table-layout:fixed; font-size:10pt; font-family:Arial;">
+			<!-- LEFT INNER TABLE -->
+			<table
+				border="1"
+				cellpadding="0"
+				cellspacing="0"
+				style="
+					border-collapse:collapse;
+					border:0.5px solid black;
+					table-layout:fixed;
+					font-size:10pt;
+					font-family:Arial;
+				"
+			>
 
 				<colgroup>
 					<col width="150" />
@@ -63,63 +61,63 @@
 				<tbody>
 
 					<tr style="height:21px;">
-						<td colspan="2" style="background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold; text-align:center;">
+						<td colspan="2" style="border:0.5px solid black; background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold; text-align:center;">
 							EOY Grade Calculator
 						</td>
 					</tr>
 
 					<tr style="height:21px;">
-						<td style="font-family:Lexend; text-align:right;">
+						<td style="border:0.5px solid black; font-family:Lexend; text-align:right;">
 							1st Semester Average:
 						</td>
 
-						<td style="text-align:center;">
+						<td style="border:0.5px solid black; text-align:center;">
 							<input type="number" id="S1" class="gradeInput">
 						</td>
 					</tr>
 
 					<tr style="height:21px;">
-						<td style="font-family:Lexend; text-align:right;">
+						<td style="border:0.5px solid black; font-family:Lexend; text-align:right;">
 							Marking Period 3:
 						</td>
 
-						<td style="text-align:center;">
+						<td style="border:0.5px solid black; text-align:center;">
 							<input type="number" id="M3" class="gradeInput">
 						</td>
 					</tr>
 
 					<tr style="height:21px;">
-						<td style="font-family:Lexend; text-align:right;">
+						<td style="border:0.5px solid black; font-family:Lexend; text-align:right;">
 							Marking Period 4:
 						</td>
 
-						<td style="text-align:center;">
+						<td style="border:0.5px solid black; text-align:center;">
 							<input type="number" id="M4" class="gradeInput">
 						</td>
 					</tr>
 
 					<tr style="height:21px;">
-						<td style="font-family:Lexend; text-align:right;">
+						<td style="border:0.5px solid black; font-family:Lexend; text-align:right;">
 							Spring Final Exam:
 						</td>
 
-						<td style="text-align:center;">
+						<td style="border:0.5px solid black; text-align:center;">
 							<input type="number" id="FE" class="gradeInput">
 						</td>
 					</tr>
 
 					<tr style="height:21px;">
-						<td style="font-family:Lexend; text-align:right;">
+						<td style="border:0.5px solid black; font-family:Lexend; text-align:right;">
 							Overall Year Average:
 						</td>
 
-						<td style="text-align:center;">
+						<td style="border:0.5px solid black; text-align:center;">
 							<input type="number" id="YR" class="gradeInput">
 						</td>
 					</tr>
 
 					<tr>
-						<td colspan="2" style="text-align:center; padding:6px;">
+						<td colspan="2" style="border:0.5px solid black; text-align:center; padding:6px;">
 
 							<button onclick="calculateGrade()">
 								Calculate
@@ -138,9 +136,21 @@
 			</td>
 
 			<!-- RIGHT SIDE -->
-			<td style="vertical-align:top; text-align:center;">
+			<td style="vertical-align:top; text-align:center; border:none;">
 
-			<table class="calcTable" style="table-layout:fixed; font-size:10pt; font-family:Arial;">
+			<!-- RIGHT INNER TABLE -->
+			<table
+				border="1"
+				cellpadding="0"
+				cellspacing="0"
+				style="
+					border-collapse:collapse;
+					border:0.5px solid black;
+					table-layout:fixed;
+					font-size:10pt;
+					font-family:Arial;
+				"
+			>
 
 				<colgroup>
 					<col width="189" />
@@ -149,13 +159,13 @@
 				<tbody>
 
 					<tr style="height:21px;">
-						<td style="background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold;">
+						<td style="border:0.5px solid black; background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold;">
 							Directions
 						</td>
 					</tr>
 
 					<tr>
-						<td style="font-family:Lexend; font-size:9pt; padding:6px; overflow-wrap:break-word;">
+						<td style="border:0.5px solid black; font-family:Lexend; font-size:9pt; padding:6px; overflow-wrap:break-word;">
 
 							<p>
 								Fill in <strong><u>4</u></strong> values on the left.
