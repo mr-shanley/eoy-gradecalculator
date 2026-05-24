@@ -4,48 +4,56 @@
 
 	<style>
 	.gradeInput{
-		width:55px;
-		border:none;
-		text-align:center;
-		font-family:Lexend;
-		font-weight:bold;
-		font-size:11pt;
-		color:black;
-		background:transparent;
-		outline:none;
+			width:55px;
+			border:none;
+			text-align:center;
+			font-family:Lexend;
+			font-weight:bold;
+			font-size:11pt;
+			color:black;
+			background:transparent;
+			outline:none;
 	}
 
 	.calculated{
-		color:red;
+			color:red;
 	}
 
-	table{
-		border-collapse:collapse;
+	/* OUTER LAYOUT TABLE = NO BORDERS */
+	.outerTable,
+	.outerTable td{
+			border:none !important;
+			border-collapse:collapse;
 	}
 
-	td{
-		border:0.5px solid black;
+	/* INNER CALCULATOR TABLES */
+	.calcTable{
+			border-collapse:collapse;
+	}
+
+	.calcTable td{
+			border:0.5px solid black;
 	}
 
 	button{
-		font-family:Lexend;
-		font-size:10pt;
-		padding:3px 10px;
-		cursor:pointer;
+			font-family:Lexend;
+			font-size:10pt;
+			padding:3px 10px;
+			cursor:pointer;
 	}
 	</style>
 </head>
 
 <body>
 
-<table align="center" border="0" border="none" cellpadding="2" cellspacing="2" style="width:600px;">
+<table class="outerTable" align="center" cellpadding="1" cellspacing="0" style="width:600px;">
 	<tbody>
 		<tr>
 
-			<!-- LEFT TABLE -->
-			<td>
+			<!-- LEFT SIDE -->
+			<td style="vertical-align:top;">
 
-			<table style="table-layout: fixed; font-size: 10pt; font-family: Arial;">
+			<table class="calcTable" style="table-layout:fixed; font-size:10pt; font-family:Arial;">
 
 				<colgroup>
 					<col width="150" />
@@ -54,7 +62,7 @@
 
 				<tbody>
 
-					<tr style="height: 21px;">
+					<tr style="height:21px;">
 						<td colspan="2" style="background:#efefef; font-family:Lexend; font-size:11pt; font-weight:bold; text-align:center;">
 							EOY Grade Calculator
 						</td>
@@ -112,8 +120,15 @@
 
 					<tr>
 						<td colspan="2" style="text-align:center; padding:6px;">
-							<button onclick="calculateGrade()">Calculate</button>
-							<button onclick="clearAll()">Clear</button>
+
+							<button onclick="calculateGrade()">
+								Calculate
+							</button>
+
+							<button onclick="clearAll()">
+								Clear
+							</button>
+
 						</td>
 					</tr>
 
@@ -122,10 +137,10 @@
 
 			</td>
 
-			<!-- RIGHT TABLE -->
-			<td style="text-align:center; vertical-align:top;">
+			<!-- RIGHT SIDE -->
+			<td style="vertical-align:top; text-align:center;">
 
-			<table style="table-layout: fixed; font-size:10pt; font-family:Arial;">
+			<table class="calcTable" style="table-layout:fixed; font-size:10pt; font-family:Arial;">
 
 				<colgroup>
 					<col width="189" />
@@ -140,14 +155,18 @@
 					</tr>
 
 					<tr>
-						<td style="font-family:Lexend; font-size:9pt; overflow-wrap:break-word; padding:6px;">
+						<td style="font-family:Lexend; font-size:9pt; padding:6px; overflow-wrap:break-word;">
 
 							<p>
-								Fill in <strong><u>4</u></strong> values on the right.
+								Fill in <strong><u>4</u></strong> values on the left.
 							</p>
 
 							<p>
 								Press <strong>[Calculate]</strong> to find the missing grade.
+							</p>
+
+							<p>
+								Press <strong>[Clear]</strong> to erase all entries.
 							</p>
 
 						</td>
@@ -164,17 +183,16 @@
 	</tbody>
 </table>
 
-<p>&nbsp;</p>
-
 <script>
 const fields = ["S1","M3","M4","FE","YR"];
 
-/* ENTER → NEXT FIELD */
+/* ENTER KEY → NEXT FIELD */
 fields.forEach((id, index) => {
 
 	document.getElementById(id).addEventListener("keydown", function(e){
 
 		if(e.key === "Enter"){
+
 			e.preventDefault();
 
 			if(fields[index + 1]){
@@ -184,6 +202,7 @@ fields.forEach((id, index) => {
 	});
 });
 
+/* CLEAR ALL */
 function clearAll(){
 
 	fields.forEach(id => {
@@ -197,6 +216,7 @@ function clearAll(){
 	document.getElementById("message").innerText = "";
 }
 
+/* CALCULATE */
 function calculateGrade(){
 
 	fields.forEach(id => {
